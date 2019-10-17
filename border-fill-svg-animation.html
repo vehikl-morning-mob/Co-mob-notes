@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #our-square {
+            fill: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 20px;
+        }
+
+        #bottom-line, #right-line {
+            stroke-dasharray: 100;
+            stroke-dashoffset: -100;
+            animation: dash 2s linear forwards;
+        }
+
+        #top-line, #left-line{
+            stroke-dasharray: 100;
+            stroke-dashoffset: -100;
+            animation: dash 2s linear forwards 2s;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        #container {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            background: #5d803a;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <svg id="our-square" width="105" height="105" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <line x1="2" y1="2"  x2="98" y2="2" stroke-width="2" stroke="black"/>
+            <line id="top-line" x1="2" y1="2"  x2="98" y2="2" stroke-width="2" stroke="yellow"/>
+
+            <line x1="2" y1="2"  x2="2" y2="98" stroke-width="2" stroke="black"/>
+            <line id="left-line" x1="2" y1="2"  x2="2" y2="98" stroke-width="2" stroke="yellow"/>
+
+            <line x1="98" y1="2"  x2="98" y2="98" stroke-width="2" stroke="black"/>
+            <line id="right-line" x1="98" y1="2"  x2="98" y2="98" stroke-width="2" stroke="yellow"/>
+
+            <line x1="2" y1="98"  x2="98" y2="98" stroke-width="2" stroke="black"/>
+            <line  id="bottom-line" x1="2" y1="98" x2="98" y2="98" stroke-width="2" stroke="yellow"/>
+        </svg>
+    </div>
+</body>
+</html>
